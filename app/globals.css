@@ -1,26 +1,65 @@
 @import "tailwindcss";
+@import "tw-animate-css";
+@import url('https://fonts.googleapis.com/css2?family=JetBrains+Mono:ital,wght@0,100..800;1,100..800&display=swap');
 
-:root {
-  --background: #ffffff;
-  --foreground: #171717;
-}
-
-@theme inline {
-  --color-background: var(--background);
-  --color-foreground: var(--foreground);
-  --font-sans: var(--font-geist-sans);
-  --font-mono: var(--font-geist-mono);
-}
-
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
+/* Configuración base (sin cambios drásticos) */
+@layer base {
+  body {
+    font-family: "JetBrains Mono", monospace;
+    background-color: #1c1c22; /* mismo color que bg-primary */
+    color: #fff; /* equivalente a text-white */
   }
 }
 
-body {
-  background: var(--background);
-  color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
+/* Container centrado + padding y breakpoints */
+@layer components {
+  .container {
+    margin-left: auto;
+    margin-right: auto;
+    padding-left: 15px;
+    padding-right: 15px;
+  }
+  .h1 { @apply text-[48px] xl:text-[80px] leading-[1.1] font-semibold; }
+  .h2 { @apply text-[36px] xl:text-[48px] leading-[1.1] font-semibold; }
+  .h3 { @apply text-[20px] xl:text-[24px] leading-[1.1] font-semibold; }
+  .text-outline { -webkit-text-stroke: 1px #ffffff; }
+  .text-outline-hover { -webkit-text-stroke: 1px #00ff99; }
+
+  @media (min-width: 640px) { .container { max-width: 640px; } }   /* sm */
+  @media (min-width: 768px) { .container { max-width: 768px; } }   /* md */
+  @media (min-width: 960px) { .container { max-width: 960px; } }   /* lg */
+  @media (min-width: 1200px){ .container { max-width: 1200px; } }  /* xl */
+}
+
+/* Colores como utilidades (primary + accent con DEFAULT/hover) */
+@layer utilities {
+  /* primary */
+  .text-primary { color: #1c1c22; }
+  .bg-primary   { background-color: #1c1c22; }
+
+  /* accent */
+  .text-accent         { color: #00ff99; }
+  .bg-accent           { background-color: #00ff99; }
+  .text-accent-hover:hover { color: #00e187; }
+  .bg-accent-hover:hover   { background-color: #00e187; }
+  /* AÑADE las variantes hover manuales */
+  .hover\:text-accent:hover   { color: #00ff99; }
+  .hover\:bg-accent-hover:hover     { background-color: #00c777; }
+  .border-accent              { border-color: #00ff99; }
+  .hover\:border-accent:hover { border-color: #00ff99; }
+  .group:hover .group-hover\:text-outline-hover {
+    -webkit-text-stroke: 1px #00ff99;  /* mismo color que definiste */
+  }
+  .group:hover .group-hover\:bg-accent {
+    background-color: #00ff99; /* mismo accent que definiste */
+  }
+  .group:hover .group-hover\:text-accent {
+    color: #00ff99; /* mismo accent que definiste */
+  }
+}
+
+@media (min-width: 1200px) {
+  .h1 { font-size: 80px; }
+  .h2 { font-size: 48px; }
+  .h3 { font-size: 24px; }
 }
