@@ -22,7 +22,7 @@ const Photo = () => {
           className="absolute w-[298px] h-[298px] xl:w-[498px] xl:h-[498px] mix-blend-lighten"
         >
           <Image
-            src="/assets/tanjiro.png"
+            src="/assets/profile-pic.png"
             priority
             quality={100}
             fill

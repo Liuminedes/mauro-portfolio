@@ -6,30 +6,38 @@ import { FiDownload } from "react-icons/fi";
 
 const Home = () => {
   return (
-    <section className="h-full">
+    <section className="h-full select-none">
       <div className="container mx-auto h-full">
         <div className="flex flex-col xl:flex-row items-center justify-between xl:pt-8 xl:pb-24">
-          <div className="text-center xl:text-left order-2 xl:order-none ">
+          <div className="text-center xl:text-left order-2 xl:order-none">
             <span className="text-xl">Software Developer</span>
             <h1 className="h1 mb-6">
               Hola! Soy
               <br /> <span className="text-accent">Mauricio Rodriguez</span>
             </h1>
-            <p className="max-w-[500px] mb-9 text-white/80 ">
+            <p className="max-w-[500px] mb-9 text-white/80">
               Me destaco en la creación de experiencias digitales elegantes y
               soy competente en varios lenguajes y tecnologías de programación.
             </p>
 
             <div className="flex flex-col xl:flex-row items-center gap-8">
+              {/* Botón que descarga el CV */}
               <Button
+                asChild
                 variant="outline"
                 size="lg"
-                className="uppercase flex items-center gap-2"
+                className="uppercase flex items-center gap-2 select-text"
               >
-                <span>Descargar CV</span>
-                <FiDownload className="text-xl" />
+                <a
+                  href="/assets/CV%20Mauricio%20Rodriguez.pdf"
+                  download="Mauricio_Rodriguez_CV.pdf"
+                >
+                  <span>Descargar CV</span>
+                  <FiDownload className="text-xl" />
+                </a>
               </Button>
-              <div className="mb-8 xl:mb-0">
+
+              <div className="mb-8 xl:mb-0 select-text">
                 <Socials
                   containerStyles="flex gap-6"
                   iconStyles="w-9 h-9 border border-accent rounded-full flex justify-center
@@ -38,6 +46,7 @@ const Home = () => {
               </div>
             </div>
           </div>
+
           <div className="order-1 xl:order-none mb-8 xl:mb-0">
             <Photo />
           </div>

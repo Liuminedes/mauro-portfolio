@@ -5,11 +5,12 @@ import {
   FaCss3,
   FaJs,
   FaReact,
-  FaFigma,
   FaNodeJs,
   FaDatabase,
+  FaLaravel,
+  FaWordpress,
 } from "react-icons/fa";
-import { SiTailwindcss, SiNextdotjs } from "react-icons/si";
+import { SiTailwindcss, SiNextdotjs, SiPhp, SiDaisyui } from "react-icons/si";
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
 import {
   Tooltip,
@@ -22,7 +23,8 @@ import { motion } from "framer-motion";
 
 const about = {
   title: "Sobre mí",
-  description: "Tengo 22 años y soy la mera verga",
+  description:
+    "Soy un desarrollador web full-stack que no le teme a los retos y disfruta encontrar soluciones creativas. Curioso por naturaleza y autodidacta por convicción, aprendo rápido y me adapto a cualquier entorno. Me encanta aportar ideas frescas, optimizar procesos y hacer que cada proyecto no solo funcione, sino que destaque.",
   info: [
     { fieldName: "Nombre", fieldValue: "Mauricio Rodriguez L." },
     { fieldName: "Celular", fieldValue: "(+57) 317 768 6358" },
@@ -105,12 +107,15 @@ const skills = {
     { icon: <FaHtml5 />, name: "Html 5" },
     { icon: <FaCss3 />, name: "Css 5" },
     { icon: <FaJs />, name: "Javacript" },
+    { icon: <SiPhp />, name: "Php" },
     { icon: <FaReact />, name: "React.JS" },
-    { icon: <FaFigma />, name: "Figma" },
-    { icon: <FaNodeJs />, name: "Node.JS" },
-    { icon: <SiTailwindcss />, name: "Tailwind.CSS" },
     { icon: <SiNextdotjs />, name: "Next.JS" },
+    { icon: <FaNodeJs />, name: "Node.JS" },
+    { icon: <FaLaravel />, name: "Laravel" },
+    { icon: <SiTailwindcss />, name: "Tailwind.CSS" },
+    { icon: <SiDaisyui />, name: "DaisyUI" },
     { icon: <FaDatabase />, name: "MySQL/MariaDB" },
+    { icon: <FaWordpress />, name: "Wordpress" },
   ],
 };
 
@@ -141,6 +146,7 @@ const Resume = () => {
           </TabsList>
 
           <div className="min-h-[70vh] w-full">
+            {/* Experiencia */}
             <TabsContent value="experience" className="w-full">
               <div className="flex flex-col gap-[30px] text-center xl:text-left">
                 <h3 className="text-4xl font-bold">{experience.title}</h3>
@@ -171,6 +177,7 @@ const Resume = () => {
                 </ScrollArea>
               </div>
             </TabsContent>
+            {/* Aprendizaje */}
             <TabsContent value="education" className="w-full">
               <div className="flex flex-col gap-[30px] text-center xl:text-left">
                 <h3 className="text-4xl font-bold">{education.title}</h3>
@@ -201,24 +208,62 @@ const Resume = () => {
                 </ScrollArea>
               </div>
             </TabsContent>
+            {/* Habilidades */}
             <TabsContent value="skills" className="w-full h-full">
               <div className="flex flex-col gap-[30px]">
                 <div className="flex flex-col gap-[30px] text-center xl:text-left">
-                  <div>
-                    <h3 className="text-4xl font-bold">{skills.title}</h3>
-                    <p className="max-w-[600px] text-white/60 mx-auto xl:mx-0">
-                      {skills.description}
-                    </p>
-                    <ul className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 xl:gap[30px]">
-                      {skills.skillList.map((skill, index) => {
-                        return <li key={index}>{skill.name}</li>;
-                      })}
-                    </ul>
-                  </div>
+                  <h3 className="text-4xl font-bold">{skills.title}</h3>
+                  <p className="max-w-[600px] text-white/60 mx-auto xl:mx-0">
+                    {skills.description}
+                  </p>
                 </div>
+                <ul className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 gap-4 xl:gap-[30px] justify-center">
+                  {skills.skillList.map((skill, index) => {
+                    return (
+                      <li key={index}>
+                        <TooltipProvider delayDuration={100}>
+                          <Tooltip>
+                            <TooltipTrigger className="w-full h-[150px] bg-[#232329] rounded-xl flex justify-center items-center group">
+                              <div className="text-6xl group-hover:text-accent transition-all duration-300">
+                                {skill.icon}
+                              </div>
+                            </TooltipTrigger>
+                            <TooltipContent>
+                              <p className="capitalize">{skill.name}</p>
+                            </TooltipContent>
+                          </Tooltip>
+                        </TooltipProvider>
+                      </li>
+                    );
+                  })}
+                </ul>
               </div>
             </TabsContent>
-            <TabsContent value="about" className="w-full"></TabsContent>
+            {/* Sobre mi */}
+            <TabsContent
+              value="about"
+              className="w-full text-center xl:text-left"
+            >
+              <div className="flex flex-col gap-[30px]">
+                <h3 className="text-4xl font-bold">{about.title}</h3>
+                <p className="max-w-[600px] text-white/60 mx-auto xl:mx-0">
+                  {about.description}
+                </p>
+                <ul className="grid grid-cols-1 xl:grid-cols-2 gap-y-6 max-w-[750px] mx-auto xl:mx-0">
+                  {about.info.map((item, index) => {
+                    return (
+                      <li
+                        key={index}
+                        className="flex items-center justify-center xl:justify-start gap-4"
+                      >
+                        <span className="text-white/60">{item.fieldName}</span>
+                        <span className="text-xl">{item.fieldValue}</span>
+                      </li>
+                    );
+                  })}
+                </ul>
+              </div>
+            </TabsContent>
           </div>
         </Tabs>
       </div>
