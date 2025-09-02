@@ -67,7 +67,7 @@ const projects = [
     category: "Commission Maker",
     title: "Proyecto 4",
     description:
-      "Esta es una plataforma web interneta que opera como un gestor de nómina para el área comercial de vehiculos multimarca, en el que analiza cantidad de ventas, porcentaje de comisiones, insentivos que se generan en un PDF final de nómina. También tiene una sección donde se puede tener una trazabilidad de matriculas y entregas de vehiculos y asi conocer bien su proceso con el cliente.",
+      "Esta es una plataforma web interna que opera como un gestor de nómina para el área comercial de vehiculos multimarca, en el que analiza cantidad de ventas, porcentaje de comisiones, insentivos que se generan en un PDF final de nómina. También tiene una sección donde se puede tener una trazabilidad de matriculas y entregas de vehiculos y asi conocer bien su proceso con el cliente.",
     stack: [
       { name: "React.js" },
       { name: "Node.js/Express" },
