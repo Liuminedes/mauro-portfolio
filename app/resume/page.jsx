@@ -40,7 +40,7 @@ const experience = {
   icon: "/assets/resume/badge.svg",
   title: "Experiencia",
   description:
-    "Llevo como experiencia una mujer que me dio un desarrollo de personaje el gonorrea",
+    "Mi recorrido tanto como personal de soporte de IT como desarrollador se ve destacado desde ya aproximadamente más de 3 años, en el que me he destacado y especializado en estas 2 áreas, perfeccionando mi desempeño en el mismo y dando un mejor resultado cada nuevo reto",
   items: [
     {
       company: "Almotores S.A",
@@ -150,7 +150,7 @@ const Resume = () => {
             <TabsContent value="experience" className="w-full">
               <div className="flex flex-col gap-[30px] text-center xl:text-left">
                 <h3 className="text-4xl font-bold">{experience.title}</h3>
-                <p className="max-w-[600px] text-white/60 mx-auto xl:m-0">
+                <p className="max-w-[700px] text-white/60 mx-auto xl:m-0">
                   {experience.description}
                 </p>
                 <ScrollArea className="h-[400px]">

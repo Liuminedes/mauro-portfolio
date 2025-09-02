@@ -18,31 +18,78 @@ import WorkSliderBtns from "@/components/WorkSliderBtns";
 const projects = [
   {
     num: "1",
-    category: "FrontEnd",
+    category: "IntraCom",
     title: "Proyecto 1",
-    description: "Proyecto de Frontend",
-    stack: [{ name: "Html 5" }, { name: "Css 3" }, { name: "Javascript" }],
-    image: "/assets/work/thumb1.png",
+    description:
+      "IntraCom es un chat corporativo privado para equipos. Mensajería en tiempo real, envío y vista previa de documentos (PDF, Word, Excel), imágenes y ZIP, con roles, búsqueda y panel de administración para ordenar usuarios y permisos.",
+    stack: [
+      { name: "React.js" },
+      { name: "Node.js/Express" },
+      { name: "Tailwind.css" },
+      { name: "Mysql/MariaDB" },
+    ],
+    image: "/assets/work/Intracom.png",
     live: "",
     github: "",
   },
   {
     num: "2",
-    category: "FullStack",
+    category: "Firma de Abogados",
     title: "Proyecto 2",
-    description: "Proyecto Fullstack",
-    stack: [{ name: "Next.js" }, { name: "Tailwind.css" }, { name: "Node.js" }],
-    image: "/assets/work/thumb2.png",
+    description:
+      "Website comercial de Tirado Escobar: landing page que presenta servicios legales y experiencia del equipo, orientada a convertir visitas en consultas de contacto. Incluye una IA personalizada que da mensajes precisos y unicos sobre los servicios que ofrece la Firma de Abogados.",
+    stack: [
+      { name: "Next.js" },
+      { name: "Tailwind.css" },
+      { name: "BotPress" },
+    ],
+    image: "/assets/work/tirado.png",
     live: "",
     github: "",
   },
   {
     num: "3",
-    category: "FrontEnd",
+    category: "Victoria Fashion",
     title: "Proyecto 3",
-    description: "Proyecto de Frontend",
-    stack: [{ name: "React.js" }, { name: "Tailwind.css" }],
-    image: "/assets/work/thumb3.png",
+    description:
+      "e-Commerce enfocada a la venta de pijamas, ropa casual, ropa íntima y demás productos de vestir para el público femenino. Se integraron formas de metodos de pago y tambien contacto directo para solicitudes de compra por via whatsapp",
+    stack: [
+      { name: "Wordpress" },
+      { name: "Bootstrap" },
+      { name: "Elementor" },
+    ],
+    image: "/assets/work/victoriafashion.png",
+    live: "",
+    github: "",
+  },
+  {
+    num: "4",
+    category: "Commission Maker",
+    title: "Proyecto 4",
+    description:
+      "Esta es una plataforma web interneta que opera como un gestor de nómina para el área comercial de vehiculos multimarca, en el que analiza cantidad de ventas, porcentaje de comisiones, insentivos que se generan en un PDF final de nómina. También tiene una sección donde se puede tener una trazabilidad de matriculas y entregas de vehiculos y asi conocer bien su proceso con el cliente.",
+    stack: [
+      { name: "React.js" },
+      { name: "Node.js/Express" },
+      { name: "MySQL/MariaDB" },
+      { name: "JavaScript" },
+    ],
+    image: "/assets/work/commissionmaker.png",
+    live: "",
+    github: "",
+  },
+  {
+    num: "5",
+    category: "TradeForge AIS",
+    title: "Proyecto 5",
+    description:
+      "Como proyecto personal, está en desarrollo un sistema de trading con inteligencia artificial, en el que se podrán realizar operaciones en el mercado de cryptomonedas de forma autónoma y didactica. La IA estará de tu lado y tu podrás aprender a como mejorar tu capital y hacer trading correctamente.",
+    stack: [
+      { name: "React.js" },
+      { name: "Node.js/Express" },
+      { name: "TradingView Widget" },
+    ],
+    image: "/assets/work/trading.png",
     live: "",
     github: "",
   },
@@ -131,7 +178,7 @@ const Work = () => {
               {projects.map((project, index) => {
                 return (
                   <SwiperSlide key={index} className="w-full">
-                    <div className="h-[460px] relative group flex justify-center items-center bg-pink-50/20">
+                    <div className="h-[450px] relative group flex justify-center items-center bg-pink-50/20">
                       {/* Overlay */}
                       <div className="absolute top-0 bottom-0 w-full h-full bg-black/10 z-10"></div>
                       {/* Image */}
@@ -148,8 +195,10 @@ const Work = () => {
                 );
               })}
               {/* Slider Buttons */}
-              <WorkSliderBtns containerStyles="flex gap-2 absolute right-0 bottom-[calc(50%_-_22px)] xl:bottom-0 z-20 w-full justify-between xl:w-max xl:justify-none" 
-              btnStyles="bg-accent hover:bg-accent-hover text-primary text-[22px] w-[44px] h-[44px] flex justify-center items-center transition-all"/>
+              <WorkSliderBtns
+                containerStyles="flex gap-2 absolute right-0 bottom-[calc(50%_-_22px)] xl:bottom-0 z-20 w-full justify-between xl:w-max xl:justify-none"
+                btnStyles="bg-accent hover:bg-accent-hover text-primary text-[22px] w-[44px] h-[44px] flex justify-center items-center transition-all"
+              />
             </Swiper>
           </div>
         </div>

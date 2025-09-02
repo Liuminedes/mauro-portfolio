@@ -23,7 +23,7 @@
   .h2 { @apply text-[36px] xl:text-[48px] leading-[1.1] font-semibold; }
   .h3 { @apply text-[20px] xl:text-[24px] leading-[1.1] font-semibold; }
   .text-outline { -webkit-text-stroke: 1px #ffffff; }
-  .text-outline-hover { -webkit-text-stroke: 1px #00ff99; }
+  .text-outline-hover { -webkit-text-stroke: 1px #bb55ff; }
 
   @media (min-width: 640px) { .container { max-width: 640px; } }   /* sm */
   @media (min-width: 768px) { .container { max-width: 768px; } }   /* md */
@@ -38,26 +38,26 @@
   .bg-primary   { background-color: #1c1c22; }
 
   /* accent */
-  .text-accent         { color: #00ff99; }
-  .bg-accent           { background-color: #00ff99; }
-  .text-accent-hover:hover { color: #00e187; }
-  .bg-accent-hover:hover   { background-color: #00e187; }
+  .text-accent         { color: #bb55ff; }
+  .bg-accent           { background-color: #bb55ff; }
+  .text-accent-hover:hover { color: #bb55ff; }
+  .bg-accent-hover:hover   { background-color: #bb55ff; }
   /* AÑADE las variantes hover manuales */
-  .hover\:text-accent:hover   { color: #00ff99; }
-  .hover\:bg-accent-hover:hover     { background-color: #00c777; }
-  .border-accent              { border-color: #00ff99; }
-  .hover\:border-accent:hover { border-color: #00ff99; }
+  .hover\:text-accent:hover   { color: #bb55ff; }
+  .hover\:bg-accent-hover:hover     { background-color: #bb55ff; }
+  .border-accent              { border-color: #bb55ff; }
+  .hover\:border-accent:hover { border-color: #bb55ff; }
   .group:hover .group-hover\:text-outline-hover {
-    -webkit-text-stroke: 1px #00ff99;  /* mismo color que definiste */
+    -webkit-text-stroke: 1px #bb55ff;  /* mismo color que definiste */
   }
   .group:hover .group-hover\:bg-accent {
-    background-color: #00ff99; /* mismo accent que definiste */
+    background-color: #bb55ff; /* mismo accent que definiste */
   }
   .group:hover .group-hover\:text-accent {
-    color: #00ff99; /* mismo accent que definiste */
+    color: #bb55ff; /* mismo accent que definiste */
   }
   .data-\[state-active\]\:bg-accent[data-state="active"],
-  .data-\[state\=active\]\:bg-accent[data-state="active"] { background-color: #00ff99; }
+  .data-\[state\=active\]\:bg-accent[data-state="active"] { background-color: #bb55ff; }
   .data-\[state-active\]\:text-primary[data-state="active"],
   .data-\[state\=active\]\:text-primary[data-state="active"] { color: #1c1c22; }
 }
