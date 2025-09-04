@@ -60,6 +60,13 @@
   .data-\[state\=active\]\:bg-accent[data-state="active"] { background-color: #bb55ff; }
   .data-\[state-active\]\:text-primary[data-state="active"],
   .data-\[state\=active\]\:text-primary[data-state="active"] { color: #1c1c22; }
+  .focus\:border-accent:focus { border-color: #bb55ff; }
+  .ring-accent { --tw-ring-color: #bb55ff; }
+  .focus\:ring-accent:focus { --tw-ring-color: #bb55ff; }
+  .focus-visible\:ring-accent:focus-visible { --tw-ring-color: #bb55ff; }
+  .ring-offset-accent { --tw-ring-offset-color: #bb55ff; }
+  .focus\:ring-offset-accent:focus { --tw-ring-offset-color: #bb55ff; }
+  .focus-visible\:ring-offset-accent:focus-visible { --tw-ring-offset-color: #bb55ff; }
 }
 
 @media (min-width: 1200px) {
