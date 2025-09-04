@@ -1,28 +1,21 @@
-import { animate, motion } from "framer-motion";
+import { motion } from "framer-motion";
+
+const TOTAL_STEPS = 6;
 
 const stairAnimation = {
-  initial: {
-    top: "0%",
-  },
-  animate: {
-    top: "100%",
-  },
-  exit: {
-    top: ["100%", "0%"],
-  },
+  initial: { top: "0%" },
+  animate: { top: "100%" },
+  exit: { top: "100%" },
 };
 
-const reverseIndex = (index) => {
-  const totalSteps = 6;
+const reverseIndex = (i) => TOTAL_STEPS - i - 1;
 
-  return totalSteps - index - 1;
-};
-
+/** Cada panel cubre su columna y baja; luego el contenedor se desmonta. */
 const Stairs = () => {
   return (
     <>
-      {[...Array(6)].map((_, index) => {
-        return <motion.div
+      {[...Array(TOTAL_STEPS)].map((_, index) => (
+        <motion.div
           key={index}
           variants={stairAnimation}
           initial="initial"
@@ -33,9 +26,9 @@ const Stairs = () => {
             ease: "easeInOut",
             delay: reverseIndex(index) * 0.1,
           }}
-          className="h-full w-full bg-white relative"
-        />;
-      })}
+          className="relative h-full w-full bg-primary"
+        />
+      ))}
     </>
   );
 };

@@ -2,6 +2,10 @@
 @import "tw-animate-css";
 @import url('https://fonts.googleapis.com/css2?family=JetBrains+Mono:ital,wght@0,100..800;1,100..800&display=swap');
 
+html, body { background-color: #1c1c22; } /* mismo color que .bg-primary */
+:root { color-scheme: dark; }
+body { overscroll-behavior-y: none; }
+
 /* Configuración base (sin cambios drásticos) */
 @layer base {
   body {

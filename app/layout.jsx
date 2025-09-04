@@ -6,7 +6,7 @@ import StairTransition from "@/components/StairTransition";
 
 const jetbrainsMono = JetBrains_Mono({
   subsets: ["latin"],
-  weight: ["100", "200", "300", "400", "500", "600", "700", "800"],
+  weight: ["100","200","300","400","500","600","700","800"],
   variable: "--font-jetbrainsMono",
 });
 
@@ -15,11 +15,10 @@ export const metadata = {
   description: "Portfolio web desarrollado en Next.js",
 };
 
-
 export default function RootLayout({ children }) {
   return (
     <html lang="es">
-      <body className={jetbrainsMono.variable}>
+      <body className={`${jetbrainsMono.variable} bg-primary`}>
         <Header />
         <StairTransition />
         <PageTransition>{children}</PageTransition>
