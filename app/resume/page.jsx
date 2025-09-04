@@ -29,7 +29,7 @@ const about = {
     { fieldName: "Nombre", fieldValue: "Mauricio Rodriguez L." },
     { fieldName: "Celular", fieldValue: "(+57) 317 768 6358" },
     { fieldName: "Experencia", fieldValue: "3 años" },
-    { fieldName: "Correo", fieldValue: "maurorl200318@gmail.com" },
+    { fieldName: "Correo", fieldValue: "liu.galax.dev.ops@gmail.com" },
     { fieldName: "Discord", fieldValue: "liu_galax_dev_ops" },
     { fieldName: "Freelance", fieldValue: "Disponible" },
     { fieldName: "Idiomas", fieldValue: "Español e Inglés" },

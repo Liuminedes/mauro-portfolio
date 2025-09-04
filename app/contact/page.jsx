@@ -7,12 +7,12 @@ import { Textarea } from "@/components/ui/textarea";
 import {
   Select, SelectContent, SelectGroup, SelectItem, SelectLabel, SelectTrigger, SelectValue,
 } from "@/components/ui/select";
-import { FaPhoneAlt, FaEnvelope, FaMapMarkedAlt } from "react-icons/fa";
+import { FaPhoneAlt, FaEnvelope, FaDiscord, FaPaperPlane, FaSpinner } from "react-icons/fa";
 
 const info = [
   { icon: <FaPhoneAlt />, title: "Celular", description: "(+57) 317 768 6358" },
-  { icon: <FaEnvelope />, title: "Email", description: "maurorl200318@gmail.com" },
-  { icon: <FaMapMarkedAlt />, title: "Dirección", description: "KR 1B 51 36 - La Alianza" },
+  { icon: <FaEnvelope />, title: "Email", description: "liu.galax.dev.ops@gmail.com" },
+  { icon: <FaDiscord />, title: "Discord", description: "liu_galax_dev_ops" },
 ];
 
 const Contact = () => {
@@ -66,7 +66,7 @@ const Contact = () => {
             <form onSubmit={onSubmit} className="flex flex-col gap-6 p-10 bg-[#27272c] rounded-xl">
               <h3 className="text-4xl text-accent">Trabajemos juntos</h3>
               <p className="text-white/60">
-                Rellena el formulario para entrar en contacto y desarrollar lo que necesites
+                Rellena el formulario para entrar en contacto y crear lo que necesites
               </p>
 
               {/* Inputs */}
@@ -84,10 +84,10 @@ const Contact = () => {
                 </SelectTrigger>
                 <SelectContent>
                   <SelectGroup>
-                    <SelectLabel>Selecciona un servicio</SelectLabel>
                     <SelectItem value="Desarrollo Web">Desarrollo Web</SelectItem>
                     <SelectItem value="Diseño UI/UX">Diseño UI/UX</SelectItem>
                     <SelectItem value="Diseño de Logos">Diseño de Logos</SelectItem>
+                    <SelectItem value="Consulta personalizada">Consulta personalizada</SelectItem>
                   </SelectGroup>
                 </SelectContent>
               </Select>
@@ -101,8 +101,24 @@ const Contact = () => {
               />
 
               {/* Submit */}
-              <Button size="md" className="max-w-40" type="submit" disabled={loading}>
-                {loading ? "Enviando..." : "Enviar mensaje"}
+              <Button
+                size="md"
+                className="w-48 inline-flex items-center justify-center gap-2"
+                type="submit"
+                disabled={loading}
+                aria-busy={loading}
+              >
+                {loading ? (
+                  <>
+                    <FaSpinner className="animate-spin" aria-hidden="true" />
+                    Enviando…
+                  </>
+                ) : (
+                  <>
+                    <FaPaperPlane aria-hidden="true" />
+                    Enviar mensaje
+                  </>
+                )}
               </Button>
 
               {/* Estado */}
